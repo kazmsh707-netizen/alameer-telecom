@@ -1,1 +1,259 @@
 
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101d36">
+  <meta name="description" content="شركة الأمير للاتصالات - بإدارة يوسف">
+  <title>شركة الأمير للاتصالات</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: #f4f7fb;
+      color: #17243b;
+      line-height: 1.8;
+    }
+
+    header {
+      background: #101d36;
+      color: white;
+      padding: 20px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: 900;
+    }
+
+    .logo span {
+      color: #55d9f5;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-right: 18px;
+      font-size: 14px;
+    }
+
+    .hero {
+      min-height: 490px;
+      padding: 85px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      background: linear-gradient(135deg, #101d36, #193c66);
+    }
+
+    .hero-content {
+      max-width: 750px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 7vw, 66px);
+      font-weight: 900;
+      margin-bottom: 5px;
+    }
+
+    .hero h1 span {
+      color: #55d9f5;
+    }
+
+    .manager {
+      font-size: 19px;
+      color: #dce8f5;
+      margin-bottom: 22px;
+    }
+
+    .location {
+      display: inline-block;
+      border: 1px solid #55d9f5;
+      border-radius: 30px;
+      padding: 7px 22px;
+      color: #55d9f5;
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      color: #dce8f5;
+      font-size: 16px;
+    }
+
+    .section {
+      padding: 65px 7%;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 30px;
+      color: #101d36;
+      margin-bottom: 12px;
+    }
+
+    .section-intro {
+      color: #69778c;
+      margin-bottom: 35px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 20px;
+      max-width: 1050px;
+      margin: auto;
+    }
+
+    .service {
+      background: white;
+      padding: 28px 20px;
+      border-radius: 17px;
+      border: 1px solid #e6edf5;
+      box-shadow: 0 8px 25px rgba(16, 29, 54, 0.05);
+    }
+
+    .service .icon {
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
+
+    .service h3 {
+      color: #17385e;
+      margin-bottom: 8px;
+    }
+
+    .service p {
+      color: #758197;
+      font-size: 14px;
+    }
+
+    .contact {
+      background: #eaf4fa;
+    }
+
+    .contact-box {
+      max-width: 650px;
+      margin: auto;
+      background: white;
+      border-radius: 18px;
+      padding: 30px 20px;
+      box-shadow: 0 8px 25px rgba(16, 29, 54, 0.05);
+    }
+
+    .contact-box p {
+      color: #69778c;
+    }
+
+    footer {
+      background: #101d36;
+      color: #dce8f5;
+      text-align: center;
+      padding: 23px 15px;
+      font-size: 13px;
+    }
+
+    footer span {
+      color: #55d9f5;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        justify-content: center;
+        text-align: center;
+      }
+
+      nav a {
+        margin: 0 7px;
+      }
+
+      .hero {
+        min-height: 410px;
+      }
+
+      .section {
+        padding: 48px 5%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">الأمير <span>للاتصالات</span></div>
+    <nav>
+      <a href="#home">الرئيسية</a>
+      <a href="#services">خدماتنا</a>
+      <a href="#contact">تواصل معنا</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <h1>الأمير <span>للاتصالات</span></h1>
+        <div class="manager">بإدارة يوسف</div>
+        <div class="location">📍 سلوك جاموس</div>
+        <p>أهلاً وسهلاً بكم في شركة الأمير للاتصالات</p>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <h2>خدماتنا</h2>
+      <p class="section-intro">نسعى دائماً لتقديم أفضل الخدمات لعملائنا</p>
+
+      <div class="services">
+        <div class="service">
+          <div class="icon">📱</div>
+          <h3>خدمات الاتصالات</h3>
+          <p>سيتم إضافة تفاصيل الخدمات قريباً.</p>
+        </div>
+
+        <div class="service">
+          <div class="icon">🌐</div>
+          <h3>خدمات الإنترنت</h3>
+          <p>سيتم إضافة تفاصيل الخدمات قريباً.</p>
+        </div>
+
+        <div class="service">
+          <div class="icon">⚡</div>
+          <h3>خدمات متنوعة</h3>
+          <p>سيتم إضافة تفاصيل الخدمات قريباً.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <h2>تواصل معنا</h2>
+      <div class="contact-box">
+        <p>يسعدنا استقبال استفساراتكم وخدمتكم.</p>
+        <p>سيتم إضافة رقم الهاتف والواتساب هنا قريباً.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 شركة الأمير للاتصالات — <span>بإدارة يوسف</span>
+  </footer>
+
+</body>
+</html>
+
