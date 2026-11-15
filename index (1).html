@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a1f6b">
+<meta name="description" content="شركة الأمير للاتصالات - بإدارة يوسف">
+<title>الأمير للاتصالات</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#0a1f6b; --blue2:#1239b8; --blue3:#2f6bff;
+  --orange:#ff6a00; --orange2:#ff8a1f; --yellow:#ffc81e;
+  --bg:#eef3ff; --card:#ffffff; --text:#0d1a45; --muted:#5b6791; --wa:#12c75a; --line:#d8e1fb;
+  --radius:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Tajawal',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+button{font-family:inherit;cursor:pointer;border:none}
+input,textarea{font-family:inherit}
+
+/* Header */
+header{position:sticky;top:0;z-index:50;background:linear-gradient(90deg,var(--blue),var(--blue2));color:#fff;box-shadow:0 4px 18px rgba(10,31,107,.35)}
+.bar{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:12px 16px;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:1.25rem}
+.logo i{font-style:normal;background:linear-gradient(135deg,var(--orange),var(--yellow));color:var(--blue);width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-size:1.3rem;box-shadow:0 4px 10px rgba(255,106,0,.5)}
+nav{display:flex;gap:20px}
+nav a{color:#e3ebff;text-decoration:none;font-weight:700;font-size:.95rem}
+nav a:hover{color:var(--yellow)}
+.cart-btn{background:linear-gradient(135deg,var(--orange),var(--orange2));color:#fff;font-weight:800;padding:9px 16px;border-radius:12px;display:flex;align-items:center;gap:8px;box-shadow:0 4px 12px rgba(255,106,0,.45)}
+.cart-btn .count{background:#fff;color:var(--orange);min-width:22px;height:22px;border-radius:11px;display:grid;place-items:center;font-size:.82rem;padding:0 6px;font-weight:900}
+@media(max-width:640px){nav{display:none}}
+
+/* Hero */
+.hero{background:radial-gradient(circle at 20% 20%,#2f6bff 0%,transparent 45%),linear-gradient(135deg,var(--blue) 0%,var(--blue2) 100%);color:#fff;text-align:center;padding:70px 16px 96px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;width:340px;height:340px;border-radius:50%;background:rgba(255,106,0,.28);top:-130px;left:-90px;filter:blur(2px)}
+.hero::after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:rgba(255,200,30,.2);bottom:-110px;right:-70px}
+.hero h1{font-size:clamp(2.1rem,7vw,3.4rem);font-weight:900;position:relative}
+.hero h1 span{background:linear-gradient(90deg,var(--yellow),var(--orange2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:#dbe5ff;margin-top:8px;font-size:1.1rem;position:relative}
+.chip{display:inline-block;margin-top:18px;background:rgba(255,255,255,.16);backdrop-filter:blur(4px);padding:7px 18px;border-radius:99px;font-size:.95rem;position:relative;font-weight:700}
+.cta{display:inline-block;margin-top:26px;background:linear-gradient(135deg,var(--orange),var(--orange2));color:#fff;padding:14px 36px;border-radius:14px;font-weight:900;text-decoration:none;position:relative;box-shadow:0 8px 20px rgba(255,106,0,.5);transition:.2s;font-size:1.05rem}
+.cta:hover{transform:translateY(-3px)}
+
+/* Services */
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:-60px auto 0;position:relative;z-index:2;max-width:1100px;padding:0 16px}
+.service{background:var(--card);border-radius:var(--radius);padding:24px;text-align:center;box-shadow:0 10px 28px rgba(10,31,107,.14);border-top:5px solid var(--orange)}
+.service:nth-child(2){border-top-color:var(--blue3)}
+.service:nth-child(3){border-top-color:var(--yellow)}
+.service .ic{font-size:2.4rem}
+.service h3{margin:8px 0 4px;color:var(--blue)}
+.service p{color:var(--muted);font-size:.92rem}
+
+section{max-width:1100px;margin:auto;padding:52px 16px}
+.title{text-align:center;margin-bottom:28px}
+.title h2{font-size:2rem;font-weight:900;color:var(--blue)}
+.title h2::after{content:"";display:block;width:64px;height:5px;background:linear-gradient(90deg,var(--orange),var(--yellow));border-radius:5px;margin:8px auto 0}
+.title p{color:var(--muted);margin-top:8px}
+
+/* Shop */
+.search{width:100%;padding:13px 18px;border:2px solid var(--line);border-radius:14px;font-size:1rem;background:#fff;margin-bottom:14px}
+.search:focus{outline:none;border-color:var(--blue3)}
+.cats{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:18px}
+.cat{background:#fff;border:2px solid var(--line);padding:9px 20px;border-radius:99px;font-weight:700;white-space:nowrap;color:var(--blue)}
+.cat.on{background:linear-gradient(135deg,var(--blue),var(--blue3));color:#fff;border-color:transparent;box-shadow:0 4px 12px rgba(18,57,184,.4)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.prod{background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:0 6px 20px rgba(10,31,107,.1);display:flex;flex-direction:column;transition:.2s}
+.prod:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(10,31,107,.18)}
+.pimg{height:130px;display:grid;place-items:center;font-size:3.6rem;overflow:hidden;color:#fff}
+.pimg img{width:100%;height:100%;object-fit:cover}
+.g-خطوط{background:linear-gradient(135deg,#1239b8,#2f6bff)}
+.g-رصيد{background:linear-gradient(135deg,#ff6a00,#ffc81e)}
+.g-إنترنت{background:linear-gradient(135deg,#0a1f6b,#1239b8)}
+.g-إكسسوارات{background:linear-gradient(135deg,#ff4d6d,#ff8a1f)}
+.pbody{padding:14px;display:flex;flex-direction:column;gap:8px;flex:1}
+.pname{font-weight:800;color:var(--blue);font-size:1.05rem}
+.pdesc{color:var(--muted);font-size:.86rem;flex:1}
+.opts{display:flex;flex-wrap:wrap;gap:6px}
+.opt{background:#fff;border:2px solid var(--line);padding:5px 12px;border-radius:99px;font-size:.85rem;font-weight:700;color:var(--blue)}
+.opt.on{background:var(--orange);border-color:var(--orange);color:#fff}
+.price{color:var(--orange);font-weight:900;font-size:1.2rem}
+.add{background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;padding:11px;border-radius:12px;font-weight:800;transition:.2s}
+.add:hover{background:linear-gradient(135deg,var(--orange),var(--orange2))}
+.empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:30px}
+
+/* Contact */
+.contact{background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;border-radius:26px;text-align:center;padding:44px 20px;box-shadow:0 12px 30px rgba(10,31,107,.3)}
+.contact p{color:#dbe5ff;margin:8px 0 20px}
+.wa-link{display:inline-flex;align-items:center;gap:8px;background:var(--wa);color:#fff;padding:14px 30px;border-radius:14px;font-weight:900;text-decoration:none;box-shadow:0 6px 16px rgba(18,199,90,.45)}
+footer{text-align:center;color:var(--muted);padding:24px 16px 90px;font-size:.88rem}
+
+.fab{position:fixed;bottom:18px;left:18px;width:58px;height:58px;border-radius:50%;background:var(--wa);display:grid;place-items:center;font-size:1.8rem;box-shadow:0 6px 18px rgba(0,0,0,.3);text-decoration:none;z-index:40}
+
+/* Drawer */
+.overlay{position:fixed;inset:0;background:rgba(5,15,60,.6);opacity:0;pointer-events:none;transition:.25s;z-index:60}
+.overlay.open{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;bottom:0;left:0;width:min(420px,100%);background:#fff;z-index:70;transform:translateX(-102%);transition:.3s;display:flex;flex-direction:column}
+.drawer.open{transform:none}
+.dh{display:flex;justify-content:space-between;align-items:center;padding:16px 18px;background:linear-gradient(90deg,var(--blue),var(--blue2));color:#fff}
+.dh h3{font-size:1.15rem}
+.x{background:none;color:#fff;font-size:1.7rem;line-height:1}
+.items{flex:1;overflow:auto;padding:12px 16px}
+.item{display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.item .em{font-size:1.8rem;width:50px;height:50px;border-radius:12px;display:grid;place-items:center;flex-shrink:0;color:#fff}
+.item .info{flex:1;min-width:0}
+.item .info b{display:block;font-size:.95rem;color:var(--blue)}
+.item .info span{font-size:.8rem;color:var(--muted);display:block}
+.item .info small{color:var(--orange);font-weight:800}
+.qty{display:flex;align-items:center;gap:8px;font-weight:800}
+.qty button{width:30px;height:30px;border-radius:9px;background:var(--bg);font-size:1.1rem;font-weight:800;color:var(--blue)}
+.del{background:none;font-size:1.1rem}
+.df{padding:14px 16px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:10px;background:#f6f9ff}
+.df input,.df textarea{width:100%;padding:11px 12px;border:2px solid var(--line);border-radius:10px;font-size:.95rem}
+.total{display:flex;justify-content:space-between;font-weight:900;font-size:1.15rem;color:var(--blue)}
+.send{background:var(--wa);color:#fff;padding:15px;border-radius:12px;font-weight:900;font-size:1.05rem;box-shadow:0 6px 14px rgba(18,199,90,.4)}
+.clear{background:none;color:var(--muted);font-size:.85rem;text-decoration:underline}
+.cart-empty{text-align:center;color:var(--muted);padding:50px 10px}
+
+.toast{position:fixed;bottom:90px;left:50%;transform:translate(-50%,20px);background:var(--blue);color:#fff;padding:11px 22px;border-radius:12px;opacity:0;transition:.3s;z-index:90;pointer-events:none;font-weight:700}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="bar">
+    <div class="logo"><i>أ</i> الأمير للاتصالات</div>
+    <nav>
+      <a href="#home">الرئيسية</a>
+      <a href="#shop">المنتجات</a>
+      <a href="#contact">تواصل معنا</a>
+    </nav>
+    <button class="cart-btn" id="openCart">🛒 السلة <span class="count" id="count">0</span></button>
+  </div>
+</header>
+
+<div class="hero" id="home">
+  <h1>أهلاً بكم في <span>الأمير للاتصالات</span></h1>
+  <p>بإدارة يوسف</p>
+  <div class="chip">📍 سلوك جاموس</div><br>
+  <a href="#shop" class="cta">تصفّح المنتجات</a>
+</div>
+
+<div class="services">
+  <div class="service"><div class="ic">📱</div><h3>خدمات الاتصالات</h3><p>خطوط وشحن رصيد</p></div>
+  <div class="service"><div class="ic">🌐</div><h3>خدمات الإنترنت</h3><p>باقات وراوترات</p></div>
+  <div class="service"><div class="ic">⚡</div><h3>خدمات متنوعة</h3><p>إكسسوارات وملحقات الجوال</p></div>
+</div>
+
+<section id="shop">
+  <div class="title"><h2>منتجاتنا</h2><p>أضف ما تريد إلى السلة ثم أرسل الطلب عبر واتساب</p></div>
+  <input class="search" id="search" type="search" placeholder="🔍 ابحث عن منتج...">
+  <div class="cats" id="cats"></div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section id="contact">
+  <div class="contact">
+    <h2>تواصل معنا</h2>
+    <p>يسعدنا استقبال استفساراتكم وخدمتكم</p>
+    <a class="wa-link" id="contactWa" href="#" target="_blank" rel="noopener">💬 راسلنا على واتساب</a>
+  </div>
+</section>
+
+<footer>© 2026 شركة الأمير للاتصالات — بإدارة يوسف</footer>
+
+<a class="fab" id="fab" href="#" target="_blank" rel="noopener" aria-label="واتساب">💬</a>
+
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer">
+  <div class="dh"><h3>🛒 سلة المشتريات</h3><button class="x" id="closeCart">×</button></div>
+  <div class="items" id="items"></div>
+  <div class="df" id="dfoot">
+    <input id="cname" placeholder="الاسم (اختياري)">
+    <textarea id="cnote" rows="2" placeholder="ملاحظات أو عنوان التوصيل (اختياري)"></textarea>
+    <div class="total"><span>المجموع</span><span id="total">0</span></div>
+    <button class="send" id="send">📲 إرسال الطلب عبر واتساب</button>
+    <button class="clear" id="clear">تفريغ السلة</button>
+  </div>
+</aside>
+<div class="toast" id="toast"></div>
+
+<script>
+/* =====================================================
+   ⚙️ الإعدادات — عدّل هون فقط
+   ===================================================== */
+const WHATSAPP_NUMBER = "";   // رقم الواتساب بالصيغة الدولية بدون + ولا أصفار. مثال: "963912345678"
+const CURRENCY = "$";         // العملة: "$" أو "ل.س" أو "TL"
+const STORE_NAME = "الأمير للاتصالات";
+
+/* المنتجات — كل منتج مرة واحدة فقط.
+   إذا للمنتج خيارات (مثل فئات الشحن) حطها بـ options وكل خيار له سعره.
+   إذا ما في خيارات، حط price مباشرة.
+   image: (اختياري) اسم صورة مرفوعة بجانب الموقع مثل "images/router.jpg" */
+const PRODUCTS = [
+  {id:1, name:"شريحة خط جديد", cat:"خطوط",      emoji:"📶", desc:"خط جديد جاهز للتفعيل", price:5},
+  {id:2, name:"شحن رصيد",      cat:"رصيد",      emoji:"💳", desc:"اختر الفئة المناسبة، تعبئة فورية",
+     options:[{label:"5",price:5},{label:"10",price:10},{label:"20",price:20},{label:"50",price:50}]},
+  {id:3, name:"باقة إنترنت",   cat:"إنترنت",    emoji:"🌐", desc:"اختر مدة الباقة",
+     options:[{label:"أسبوعية",price:5},{label:"شهرية",price:15},{label:"3 أشهر",price:40}]},
+  {id:4, name:"راوتر واي فاي", cat:"إنترنت",    emoji:"📡", desc:"راوتر منزلي بتغطية ممتازة", price:30},
+  {id:5, name:"شاحن سريع",     cat:"إكسسوارات", emoji:"🔌", desc:"شاحن بجودة عالية", price:6},
+  {id:6, name:"سماعات بلوتوث", cat:"إكسسوارات", emoji:"🎧", desc:"صوت نقي وبطارية تدوم", price:12},
+  {id:7, name:"كفر + حماية شاشة", cat:"إكسسوارات", emoji:"📱", desc:"حماية كاملة لجوالك", price:4}
+];
+
+/* =====================================================
+   الكود — ما يلزم تعدّل تحته
+   ===================================================== */
+const $ = id => document.getElementById(id);
+let cart = {};            // مفتاح "id|optIndex" -> الكمية
+let sel = {};             // الخيار المختار لكل منتج
+let activeCat = "الكل", query = "";
+
+try { cart = JSON.parse(localStorage.getItem("alameer_cart2")||"{}"); } catch(e){ cart = {}; }
+const save = () => { try{ localStorage.setItem("alameer_cart2", JSON.stringify(cart)); }catch(e){} };
+const fmt = n => (Math.round(n*100)/100).toLocaleString("en-US") + " " + CURRENCY;
+const byId = id => PRODUCTS.find(p => p.id == id);
+const gcls = c => "g-" + c;
+
+function lineInfo(key){
+  const [id,oi] = key.split("|"); const p = byId(id); if(!p) return null;
+  const o = p.options ? p.options[+oi] : null; if(p.options && !o) return null;
+  return {p, label:o?o.label:"", price:o?o.price:p.price};
+}
+
+function toast(msg){
+  const t=$("toast"); t.textContent=msg; t.classList.add("show");
+  clearTimeout(toast._t); toast._t=setTimeout(()=>t.classList.remove("show"),1600);
+}
+
+function renderCats(){
+  const cats = ["الكل", ...new Set(PRODUCTS.map(p=>p.cat))];
+  $("cats").innerHTML = cats.map(c=>`<button class="cat ${c===activeCat?'on':''}" data-c="${c}">${c}</button>`).join("");
+  $("cats").querySelectorAll(".cat").forEach(b=>b.onclick=()=>{activeCat=b.dataset.c;renderCats();renderGrid();});
+}
+
+function renderGrid(){
+  const list = PRODUCTS.filter(p =>
+    (activeCat==="الكل" || p.cat===activeCat) && (p.name+p.desc).includes(query.trim()));
+  $("grid").innerHTML = list.length ? list.map(p=>{
+    const oi = sel[p.id] ?? 0;
+    const price = p.options ? p.options[oi].price : p.price;
+    const opts = p.options ? `<div class="opts">${p.options.map((o,i)=>
+      `<button class="opt ${i===oi?'on':''}" data-id="${p.id}" data-i="${i}">${o.label}</button>`).join("")}</div>` : "";
+    return `<div class="prod">
+      <div class="pimg ${gcls(p.cat)}">${p.image?`<img src="${p.image}" alt="${p.name}" loading="lazy">`:p.emoji}</div>
+      <div class="pbody">
+        <div class="pname">${p.name}</div>
+        <div class="pdesc">${p.desc||""}</div>
+        ${opts}
+        <div class="price">${fmt(price)}</div>
+        <button class="add" data-id="${p.id}">➕ أضف للسلة</button>
+      </div></div>`;
+  }).join("") : `<div class="empty">ما في نتائج 🙁</div>`;
+  $("grid").querySelectorAll(".opt").forEach(b=>b.onclick=()=>{sel[b.dataset.id]=+b.dataset.i;renderGrid();});
+  $("grid").querySelectorAll(".add").forEach(b=>b.onclick=()=>add(b.dataset.id));
+}
+
+function add(id){
+  const p = byId(id); const key = id+"|"+(p.options ? (sel[id]??0) : 0);
+  cart[key]=(cart[key]||0)+1; save(); renderCart(); toast("تمت الإضافة للسلة ✅");
+}
+function setQty(key,d){ cart[key]=(cart[key]||0)+d; if(cart[key]<=0) delete cart[key]; save(); renderCart(); }
+
+function renderCart(){
+  const keys = Object.keys(cart).filter(k=>lineInfo(k));
+  $("count").textContent = keys.reduce((s,k)=>s+cart[k],0);
+  let total = 0;
+  if(!keys.length){
+    $("items").innerHTML = `<div class="cart-empty">🛒<br>السلة فاضية<br><small>أضف منتجات لتبدأ</small></div>`;
+    $("dfoot").style.display="none";
+  } else {
+    $("dfoot").style.display="flex";
+    $("items").innerHTML = keys.map(k=>{
+      const {p,label,price}=lineInfo(k); const sub=price*cart[k]; total+=sub;
+      return `<div class="item">
+        <div class="em ${gcls(p.cat)}">${p.emoji}</div>
+        <div class="info"><b>${p.name}</b>${label?`<span>${label}</span>`:""}<small>${fmt(sub)}</small></div>
+        <div class="qty"><button data-k="${k}" data-d="-1">−</button><span>${cart[k]}</span><button data-k="${k}" data-d="1">+</button></div>
+        <button class="del" data-k="${k}" data-d="all" aria-label="حذف">🗑</button>
+      </div>`;
+    }).join("");
+    $("items").querySelectorAll("button[data-d]").forEach(b=>b.onclick=()=>{
+      if(b.dataset.d==="all"){ delete cart[b.dataset.k]; save(); renderCart(); }
+      else setQty(b.dataset.k,+b.dataset.d);
+    });
+  }
+  $("total").textContent = fmt(total);
+}
+
+function openCart(o){ $("drawer").classList.toggle("open",o); $("overlay").classList.toggle("open",o); }
+$("openCart").onclick=()=>openCart(true);
+$("closeCart").onclick=()=>openCart(false);
+$("overlay").onclick=()=>openCart(false);
+$("clear").onclick=()=>{ if(confirm("تفريغ السلة؟")){ cart={}; save(); renderCart(); } };
+$("search").oninput=e=>{ query=e.target.value; renderGrid(); };
+
+function waBase(){ return "https://wa.me/"+WHATSAPP_NUMBER.replace(/\D/g,""); }
+function sendOrder(){
+  if(!WHATSAPP_NUMBER){ alert("لم يتم ضبط رقم الواتساب بعد. عدّل WHATSAPP_NUMBER في ملف index.html"); return; }
+  const keys = Object.keys(cart).filter(k=>lineInfo(k));
+  if(!keys.length) return;
+  let total=0;
+  const lines = keys.map((k,i)=>{
+    const {p,label,price}=lineInfo(k); const sub=price*cart[k]; total+=sub;
+    return `${i+1}) ${p.name}${label?" ("+label+")":""} × ${cart[k]} = ${fmt(sub)}`;
+  });
+  const name=$("cname").value.trim(), note=$("cnote").value.trim();
+  const msg = ["🛒 طلب جديد من موقع "+STORE_NAME,"",...lines,"","💰 المجموع: "+fmt(total),
+    name?"👤 الاسم: "+name:"", note?"📝 ملاحظات: "+note:""].filter((l,i,a)=>l!==""||a[i-1]!=="").join("\n");
+  window.open(waBase()+"?text="+encodeURIComponent(msg),"_blank");
+}
+$("send").onclick = sendOrder;
+
+const hello = encodeURIComponent("مرحباً، عندي استفسار 👋");
+["contactWa","fab"].forEach(id=>{
+  const a=$(id);
+  if(WHATSAPP_NUMBER){ a.href=waBase()+"?text="+hello; }
+  else { a.onclick=e=>{e.preventDefault();alert("لم يتم ضبط رقم الواتساب بعد.");}; }
+});
+
+renderCats(); renderGrid(); renderCart();
+</script>
+</body>
+</html>
